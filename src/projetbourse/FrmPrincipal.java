@@ -267,10 +267,22 @@ public class FrmPrincipal extends javax.swing.JFrame {
         
         // A vous de jouer
         
-        for(Trader trad:mesTraders)
+        if(txtQuantiteVendue.getText().compareTo("")==0)
         {
-            
+            JOptionPane.showMessageDialog(this, "Séléctionnez une action");
         }
+        else
+        {
+            for(Trader trad:mesTraders)
+            {
+                for(Action a:trad.getLesActionsAchetes())
+                {
+
+                }
+            }
+        }
+        
+        
         
     }//GEN-LAST:event_btnVendreMouseClicked
 
