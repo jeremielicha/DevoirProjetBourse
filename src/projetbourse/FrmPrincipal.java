@@ -241,29 +241,36 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 }
             }
         }
+        double montant=0;
+        for(Trader trad : mesTraders)
+        {
+            if(trad.getIdTrader()==Integer.parseInt(tblTraders.getValueAt(tblTraders.getSelectedRow(), 0).toString()))
+            {
+                for(Action a:trad.getLesActionsAchetes())
+                {
+                    montant=montant+(a.getValeurActuelAction()*a.getQuantiteAcheteAction())-(a.getPrixAchatAction()*a.getQuantiteAcheteAction());
+                }
+            }
+        }
+        lblPortefeuille.setText(String.valueOf(Math.round(montant)));
+        
         
     }//GEN-LAST:event_tblTradersMouseClicked
 
     private void tblActionsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblActionsMouseClicked
         
         // A vous de jouer
-        double montant=0;
-        for(Trader trad : mesTraders)
-        {
-            for(Action a:trad.getLesActionsAchetes())
-            {
-                if(trad.getIdTrader()==Integer.parseInt(tblTraders.getValueAt(tblTraders.getSelectedRow(), 0).toString()))
-                {
-                montant=montant+(a.getValeurActuelAction()*a.getQuantiteAcheteAction())-(a.getPrixAchatAction()*a.getQuantiteAcheteAction());
-                }
-            }
-        }
-        lblPortefeuille.setText(String.valueOf(Math.round(montant)));
+        
     }//GEN-LAST:event_tblActionsMouseClicked
 
     private void btnVendreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendreMouseClicked
         
         // A vous de jouer
+        
+        for(Trader trad:mesTraders)
+        {
+            
+        }
         
     }//GEN-LAST:event_btnVendreMouseClicked
 
