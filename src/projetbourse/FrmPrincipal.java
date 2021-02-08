@@ -266,7 +266,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void btnVendreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVendreMouseClicked
         
         // A vous de jouer
-        
+        int nouvelleQ;
         if(txtQuantiteVendue.getText().compareTo("")==0)
         {
             JOptionPane.showMessageDialog(this, "Séléctionnez une action");
@@ -277,7 +277,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
             {
                 for(Action a:trad.getLesActionsAchetes())
                 {
-
+                    nouvelleQ=(a.getQuantiteAcheteAction())-(Integer.parseInt(txtQuantiteVendue.getText()));
                 }
             }
         }
